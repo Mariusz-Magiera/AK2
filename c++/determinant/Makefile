@@ -1,13 +1,13 @@
 all: clean determinant.exe
 
 determinant.exe: Main.o Matrix.o
-	$(CC) -o $@ $^ 
+	$(CC) -g -o $@ $^ -lstdc++
 
 Main.o:
-	$(CC) -c -o $@ Main.cpp
+	$(CC) -g -c -o $@ Main.cpp
 
 Matrix.o:
-	$(CC) -c -o $@ Matrix.cpp 
+	$(CC) -g -c -o $@ Matrix.cpp 
 
 
 .PHONY: clean

@@ -22,7 +22,7 @@ int main(void) {
 		
 		switch (menu_choice) { //TODO
 		case '1':
-			cout << "Podaj nazwe pliku tekstowego:";
+			cout << "Podaj nazwe pliku tekstowego: ";
 			cin >> file_name;
 			mat = Matrix::readFromFile(file_name);
 			if(mat.size()==0){
@@ -30,7 +30,7 @@ int main(void) {
 			}
 			break;
 		case '2':
-			cout << "Wyznacznik macierzy: " << mat.calculateDeterminant() << endl;
+			cout << "Wyznacznik macierzy: " << Matrix::calculateDeterminant(mat) << endl;
 			break;
 		case '3':
 			cout << "Rozmiar macierzy: " << mat.size() << endl;

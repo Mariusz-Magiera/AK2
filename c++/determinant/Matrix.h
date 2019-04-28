@@ -14,13 +14,16 @@ public:
 	~Matrix();
 
 	void initializeMatrix(int size);
-	int calculateDeterminant();
+	
 	int size();
 	
 	static Matrix readFromFile(std::string file_name);
+	static int calculateDeterminant(Matrix m);
 
 	int* operator[](int i) {
 		return matrix[i];
 	}
+
+	Matrix& operator=(const Matrix &m);
 };
 
