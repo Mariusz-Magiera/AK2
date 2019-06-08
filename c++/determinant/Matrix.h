@@ -18,6 +18,7 @@ public:
 	int size();
 	
 	static Matrix readFromFile(std::string file_name);
+	static Matrix randomMatrix(int size);
 	static int calculateDeterminant(Matrix m);
 
 	int* operator[](int i) {

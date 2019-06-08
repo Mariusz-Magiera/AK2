@@ -20,7 +20,7 @@ int main(void) {
 		cin >> menu_choice;
 		cout << endl;
 		
-		switch (menu_choice) { //TODO
+		switch (menu_choice) {
 		case '1':
 			cout << "Podaj nazwe pliku tekstowego: ";
 			cin >> file_name;
@@ -30,9 +30,18 @@ int main(void) {
 			}
 			break;
 		case '2':
-			cout << "Wyznacznik macierzy: " << Matrix::calculateDeterminant(mat) << endl;
+			int size;
+			cout << "Podaj rozmiar generowanej macierzy: ";
+			cin >> size;
+			mat = Matrix::randomMatrix(size);
+			if(mat.size()==0){
+				cout << endl << "Blad odczytu z pliku" << endl;
+			}
 			break;
 		case '3':
+			cout << "Wyznacznik macierzy: " << Matrix::calculateDeterminant(mat) << endl;
+			break;
+		case '4':
 			cout << "Rozmiar macierzy: " << mat.size() << endl;
 			for (size_t i = 0; i < mat.size(); i++) {
 				for (size_t j = 0; j < mat.size(); j++)	{
@@ -41,7 +50,7 @@ int main(void) {
 				cout << endl;
 			}			
 			break;
-		case '4':
+		case '5':
 			exit(EXIT_SUCCESS);
 			break;
 		default:
@@ -55,7 +64,8 @@ int main(void) {
 void printMainMenu() {
 	cout << "Menu glowne:" << endl <<
 		'\t' << "1 - Wczytaj macierz z pliku" << endl <<
-		'\t' << "2 - Oblicz wyznacznik" << endl <<
-		'\t' << "3 - Wyswietl macierz" << endl <<
-		'\t' << "4 - Wyjscie" << endl;
+		'\t' << "2 - Generuj losowa macierz" << endl <<
+		'\t' << "3 - Oblicz wyznacznik" << endl <<
+		'\t' << "4 - Wyswietl macierz" << endl <<
+		'\t' << "5 - Wyjscie" << endl;
 }

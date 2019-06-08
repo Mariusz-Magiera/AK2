@@ -1,4 +1,5 @@
 #include <fstream>
+#include <time.h>
 #include "Matrix.h"
 
 #define REFERENCE_ROW 0
@@ -81,6 +82,20 @@ Matrix Matrix::readFromFile(std::string file_name){
 	}
 
 	fs.close();
+	return matrix;
+}
+
+Matrix Matrix::randomMatrix(int size){
+	Matrix matrix;
+	srand( time( NULL ) );
+
+	matrix.initializeMatrix(size);
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			matrix[i][j] = rand() % 100;
+		}
+	}
+
 	return matrix;
 }
 
