@@ -20,12 +20,12 @@ def determinant_recursive(A, num_of_calls, total=0, num_of_recs=0):
     if len(A) == 1:
         val = A[0][0]
         recur_counter += 1
-        print(recur_counter / num_of_calls * 100.0, " %")
+        #print(recur_counter / num_of_calls * 100.0, " %")
         return val
     elif len(A) == 2 and len(A[0]) == 2:
         val = A[0][0] * A[1][1] - A[1][0] * A[0][1]
         recur_counter += 1
-        print(recur_counter / num_of_calls * 100.0, " %")
+        #print(recur_counter / num_of_calls * 100.0, " %")
         return val
 
     # Section 3: define submatrix for focus column and
@@ -47,7 +47,7 @@ def determinant_recursive(A, num_of_calls, total=0, num_of_recs=0):
         # H) total all returns from recursion
         total += sign * A[0][fc] * sub_det
     recur_counter += 1
-    print(recur_counter / num_of_calls * 100.0, " %")
+    #print(recur_counter / num_of_calls * 100.0, " %")
     return total
 
 
