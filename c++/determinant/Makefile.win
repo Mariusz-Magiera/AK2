@@ -1,0 +1,19 @@
+CC=cl.exe
+LINK=link.exe
+OUTPUT=determinant_cpp.exe
+
+all: clean $(OUTPUT)
+
+$(OUTPUT): Main.o Matrix.o
+	$(LINK) /OUT:$(OUTPUT) Main.o Matrix.o
+
+Main.o:
+	$(CC) /g /c /FoMain.o Main.cpp
+
+Matrix.o:
+	$(CC) /g /c /FoMatrix.o Matrix.cpp 
+
+
+clean:
+	del  *.o $(OUTPUT)
+	

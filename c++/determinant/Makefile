@@ -1,6 +1,7 @@
-all: clean determinant.exe
+OUTPUT=determinant_cpp.exe
+all: clean $(OUTPUT)
 
-determinant.exe: Main.o Matrix.o
+$(OUTPUT): Main.o Matrix.o
 	$(CC) -g -o $@ $^ -lstdc++
 
 Main.o:
@@ -12,5 +13,5 @@ Matrix.o:
 
 .PHONY: clean
 clean:
-	rm -f *.o determinant.exe
+	rm -f *.o $(OUTPUT)
 	
